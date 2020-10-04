@@ -7,7 +7,7 @@ from django.shortcuts import render
 
 class OCR(TemplateView):
 	template_name = 'index.html'
-	cred = credentials.Certificate("privateKey.json") # ダウンロードした秘密鍵
+	cred = credentials.Certificate("privateKey.json")
 	firebase_admin.initialize_app(cred)
 	db = firestore.client()
 	def get(self,request):
