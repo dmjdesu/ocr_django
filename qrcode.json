@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "expo-firebase-qrcode",
+  "private_key_id": "dcc97dfce1b5d92b7ffb125c424de330e23205b7",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDItcxeYO8bLVZN\nuiFluZPsYltdZL5PQjDBGtHjQ4KBGe2Fj4aGEvUvR55HZHvJhaAGQbGmr+fY5oY/\nLK2xfgc7V3K27f3EL+8DA+jU/0mLdso04ZTmfLhmxy9pXZfrbmJOjEqkTDDQiHrn\n99WKbOa3vfSaAE9O25FXoUseLxPCu7ZMt1q8gRYOjthbGprJnNmuddxblJ4fEgzK\naZdJgMPQdH0i1Nn1ThZf+94qazy8Cj1lY/3pMtiwv2K2iLMencfrC/TpFGGyEWzo\n+D519tsJCvJoraSHFuhg7VovrrZV43KEoGw6n48fR0+WBMuUDoxgvPxfB57L9Rl2\nDwrpJksNAgMBAAECggEAVXV26Z6LYH5610iPzNDqB4XPkiIBmBy+RpKFWKdXi2G/\nTRWR+UdcJz/uyEYkIOeo/dD989PFO4jYE1ESOddH+//dg78sxFqGgbmp6vsx1NSE\n/2QncsYa/AQGj23+8AsFh51bcL5SMJBUCK3xOenpiMW0Ptgv7Is3xOCT6+uulcR3\nDE7iiSkp8x5v2TXycb3LbWWNgnJFy6ChuYJHsFXG6jzH+GcM52kX5pueCaj3lCky\nIjnHLiUf1jBxGuFq74jwQf7EHObTKtTs/Qxr2sR7VAl/k0xPcMa4/YlEYH23H/MP\nweTydQYmYHCaeIzEAemXsTMexPZURrR06Z4m1xZorwKBgQDrcac+UO7oP39g9GvF\n90Glv7wXh2m0qZhPPoJeX1Uup4N0Hvp3bPgaBROX9wDAOGbjTXXMEf0hZpyXqOxb\nsgDgeJGNz1QRTy42OXyLfj5GDKibgANmSBD8zIXDXs/Yv3nGNhf9JygFdehlIgkC\nKWxW4F9kCMx8vG21QmPmBvGwgwKBgQDaO9GWBxbeQwShzXsrl/lxDIcu+BYfATUp\nEiAjDTrEpldWvJtADBvYqUb9ypU7K5BScWXFefFRezABfoMcFOxH3Q3SNQyqS8ud\nYZFn8JNr1JofMjS+OYkVzST2ceFu6xV4iZby4ZvrMhtmRm6F0d1j9OW4qnCImF92\n5ec9XgIhLwKBgQC+E9JOV+6YZ3MBpjI/7377PlCuui7XoLeK+k8ru1E8yhYxMDVL\nJxkhgImx/MKJbL97sHRyXO98AKhZNBIlcQ6OKihwUTpwgvku47gtsay6xst0RqP3\n9iRowwEWmju4o9S+9brmMK95wRfuVczqBuElPh0k2ImmBkWXuVKHSYHj2wKBgQCu\neZy6wbg6woH1in6q/7nh9A4wMxAcga6qw18GJxGRHxw8sFW/Au9QbSXgyhI9WDru\nbtLa6v9QEZjz2N2hmei+G7FtGhSiIi8MCHFkFCcI0tTVlCIu43kCAR1IGwwMzc5A\nrGAOluk9RLY7MpwySPMjcywmU73ct1W7jVsu6PXy6QKBgQCaq4Qgk6kRi7P3tF3H\nIZhDAU1itLeZRBGRxdJbP2k7J97k4pQ9YOfp32MNm02O3CxHy2jvBnnNH5Jl4sLN\nXGcXmx6gFx4qJG81nge2+UU3ImpmR4lQ/Svggx1jvyonX8MEBmEd7lxsP3gzVScu\na0sKKFygqhLnduIY3hXbbJQhcg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "django-ocr-firebase@expo-firebase-qrcode.iam.gserviceaccount.com",
+  "client_id": "106048721879970361677",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/django-ocr-firebase%40expo-firebase-qrcode.iam.gserviceaccount.com"
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+
+{% bootstrap_css %} 
+{% bootstrap_javascript jquery='full' %}
+
+<body>
+	<div class="row">
+		<div class="col-sm-12">
+			<table class="table table-striped">
+			  <tbody>
+			  	{% for ocr_dict in ocr_array %}
+				    <tr>
+				      {% for key,value in ocr_dict.items %}
+					      <td >{{value}}</td>
+				      {% endfor %}
+				    </tr>
+				{% endfor %}
+			  </tbody>
+			</table>
+		</div>
+	</div>
+	<br>
+</body>
