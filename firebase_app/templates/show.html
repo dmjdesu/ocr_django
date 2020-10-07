@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+{% load static %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript jquery='full' %}
+</head>
+<body>
+<div class="row">
+<div class="col-sm-12">
+<table class="table table-striped table-hover">
+	<tbody>
+		{% for key,value in dic.items %}
+		   <tr>
+		   	<td >{{value}}</td>
+		   </tr>
+	  	{% endfor %}
+  	</tbody>
+</table>
+</div>
+</div>
+<br>
+</body>

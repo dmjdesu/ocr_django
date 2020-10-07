@@ -10,6 +10,7 @@ class OCR(TemplateView):
 	cred = credentials.Certificate("privateKey.json")
 	firebase_admin.initialize_app(cred)
 	db = firestore.client()
+
 	def get(self,request):
 		docs = self.db.collection('test').get()
 		ocr_array = []
@@ -21,5 +22,10 @@ class OCR(TemplateView):
 				dic['value'+ str(i + 1)] = doc.to_dict()['value' + str(i + 1)]
 				dic['category'+ str(i + 1)] = doc.to_dict()['category' + str(i + 1)]
 			ocr_array.append(dic)
-
 		return render(request, 'index.html',{'ocr_array':ocr_array})
+
+def show(request,id=None):
+	db = firestore.client()
+	dic = db.collection('test').get()[int(id)].to_dict()
+	
+	return render(request, 'show.html',{'dic':dic})

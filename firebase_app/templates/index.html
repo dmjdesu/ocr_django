@@ -1,24 +1,33 @@
 <!DOCTYPE html>
+<head>
 {% load static %}
 
-{% bootstrap_css %} 
+{% bootstrap_css %}
 {% bootstrap_javascript jquery='full' %}
-
+</head>
 <body>
-	<div class="row">
-		<div class="col-sm-12">
-			<table class="table table-striped">
-			  <tbody>
-			  	{% for ocr_dict in ocr_array %}
-				    <tr>
-				      {% for key,value in ocr_dict.items %}
-					      <td >{{value}}</td>
-				      {% endfor %}
-				    </tr>
-				{% endfor %}
-			  </tbody>
-			</table>
-		</div>
-	</div>
-	<br>
+<div class="row">
+<div class="col-sm-12">
+<table class="table table-striped table-hover">
+	<tbody>
+		{% for ocr_dict in ocr_array %}
+		   <tr onclick="show({{forloop.counter0}})">
+		   	<th>{{forloop.counter}}</th>
+		     {% for key,value in ocr_dict.items %}
+		  		<td >{{key}}->
+		  		{{value}}</td>
+		     {% endfor %}
+		     <td><a href="{% url 'show' id=forloop.counter0 %}">詳細</a></td>
+		   </tr>
+	  	{% endfor %}
+  	</tbody>
+</table>
+</div>
+</div>
+<br>
 </body>
+<script>
+	function show(id){
+        location.href = "{% url 'show' id=9999 %}".replace(/9999/,id);;
+    };
+</script>

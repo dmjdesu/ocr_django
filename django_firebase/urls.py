@@ -14,11 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-
-from django.urls import include, path
+from django.conf.urls import url, include
 
 urlpatterns = [
-	path('ocr/', include('firebase_app.urls')),
-    path('admin/', admin.site.urls),
+	url(r'^ocr/', include('firebase_app.urls')),
+    url(r'^admin/', admin.site.urls),
 ]
