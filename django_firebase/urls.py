@@ -14,9 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.urls import path
 from django.conf.urls import url, include
 
 urlpatterns = [
 	url(r'^ocr/', include('firebase_app.urls')),
     url(r'^admin/', admin.site.urls),
+    path('', views.Top.as_view(), name='top'),
+    path('login/', views.Login.as_view(), name='login'),
+    path('logout/', views.Logout.as_view(), name='logout'),
 ]
