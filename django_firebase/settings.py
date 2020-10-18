@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+FIREBASE_PATH = os.path.join(BASE_DIR, 'privateKey.json')
+
+AUTH_USER_MODEL = 'firebase_authentication.User'
+
 
 # Application definition
 
@@ -37,16 +41,25 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'firebase_app',
+    'firebase_authentication',
     'bootstrap4', 
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'firebase_authentication.authentication.FirebaseAuthentication',
+    ),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    # 'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'firebase_authentication.authentication.FirebaseAuthMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -119,8 +132,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-LOGIN_URL = 'register:login'
-LOGIN_REDIRECT_URL = 'register:top'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 

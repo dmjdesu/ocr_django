@@ -6,4 +6,5 @@ from . import views
 urlpatterns = [
     path('', views.OCR.as_view(), name='index'),
     url(r'^show/(?P<id>\d+)/$', views.show, name='show'),
+    path('top/', views.Top.as_view(), name='top'),
 ]

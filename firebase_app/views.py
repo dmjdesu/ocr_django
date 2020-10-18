@@ -1,6 +1,8 @@
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
+from firebase_admin import auth
+from firebase_authentication.mixins import FirebaseAuthMixin
 from django.http import HttpResponse
 from django.views.generic import TemplateView
 from django.shortcuts import render
@@ -11,15 +13,21 @@ from django.contrib.auth.views import (
 from django.views import generic
 from .forms import LoginForm
 
-class OCR(TemplateView):
+from django.conf import settings
+
+
+class OCR(FirebaseAuthMixin,TemplateView):
 	template_name = 'index.html'
-	cred = credentials.Certificate("privateKey.json")
-	firebase_admin.initialize_app(cred)
-	db = firestore.client()
+
 
 	def get(self,request):
-		docs = self.db.collection('test').get()
+		app = firebase_admin.get_app()
+		db = firestore.client()
+
+		docs = db.collection('test').get()
 		ocr_array = []
+
+		print(settings.AUTH_USER_MODEL)
 
 		for doc in docs:
 			print(len(doc.to_dict()))
@@ -39,13 +47,3 @@ def show(request,id=None):
 class Top(generic.TemplateView):
     template_name = 'register/top.html'
 
-
-class Login(LoginView):
-    """ログインページ"""
-    form_class = LoginForm
-    template_name = 'register/login.html'
-
-
-class Logout(LogoutView):
-    """ログアウトページ"""
-    template_name = 'register/top.html'
