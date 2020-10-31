@@ -10,13 +10,15 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import (
     LoginView, LogoutView
 )
+from django.contrib.auth.models import User
 from django.views import generic
 from .forms import LoginForm
 
 from django.conf import settings
+import pprint
 
 
-class OCR(FirebaseAuthMixin,TemplateView):
+class OCR(TemplateView):
 	template_name = 'index.html'
 
 
@@ -24,10 +26,12 @@ class OCR(FirebaseAuthMixin,TemplateView):
 		app = firebase_admin.get_app()
 		db = firestore.client()
 
-		docs = db.collection('test').get()
-		ocr_array = []
+		user = auth.get_user_by_email('dmjdesu@gmail.com')
 
-		print(settings.AUTH_USER_MODEL)
+		print('Successfully fetched user data: {0}'.format(user.uid))
+
+		docs = db.collection('test').where('value1', '==', user.uid).get()
+		ocr_array = []
 
 		for doc in docs:
 			print(len(doc.to_dict()))
@@ -44,6 +48,6 @@ def show(request,id=None):
 	
 	return render(request, 'show.html',{'dic':dic})
 
-class Top(generic.TemplateView):
+class Top(TemplateView):
     template_name = 'register/top.html'
 

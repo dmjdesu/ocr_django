@@ -21,3 +21,8 @@ urlpatterns = [
 	url(r'^ocr/', include('firebase_app.urls')),
     url(r'^admin/', admin.site.urls),
 ]
+
+from rest_framework.authtoken import views
+urlpatterns += [
+    url(r'^api-token-auth/', views.obtain_auth_token)
+]

@@ -25,7 +25,7 @@ SECRET_KEY = 'x75=h13l7z=8aax4!nwdbrbku@p579^pvsf%6&x246hl39y62p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 FIREBASE_PATH = os.path.join(BASE_DIR, 'privateKey.json')
 
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
     'firebase_app',
     'firebase_authentication',
     'bootstrap4', 
